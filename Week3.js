@@ -56,6 +56,10 @@ let namesArray = ["Kelly", "Sam", "Kate"] //given this array
 
 let nameLengths = [];
 
+for (var number of namesArray){
+    nameLengths.push(number.length);
+}
+console.log(nameLengths);
 
 
 
@@ -63,29 +67,110 @@ let nameLengths = [];
 
 // 6.	Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
 
+let sumNamesNumber = 0;
 
-
+for(let i = 0; i < nameLengths.length; i++){
+    sumNamesNumber += nameLengths[i];
+}
+console.log(sumNamesNumber);
 
 
 // 7.	Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. 
 //(i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).
 
+let word = "hello";
+let n = 3;
+function concatenated(word,n){
+    if (n > 0 );
+    return word.repeat(n);
+}
+console.log(concatenated(word,n));
 
 // 8.	Write a function that takes two parameters, firstName and lastName, and returns a full name (the full name should be the first and the last name separated by a space).
+let firstName = 'John'
+let lastName = "Smith"
+function fullName (firstName,lastName){
+    return firstName + " " + lastName;
+}
+console.log(fullName(firstName,lastName));
+
+
 
 
 // 9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
 
+let numberArray = [5,96];
+
+function sumHundred(numberArray){
+    let sumHundred = 0;
+   for(var value of numberArray){
+    sumHundred += value;
+   }
+   if(sumHundred > 100){
+    return true;
+   }
+}
+console.log(sumHundred(numberArray));
+
 
 // 10.	Write a function that takes an array of numbers and returns the average of all the elements in the array.
 
+let findAverageNumber = [5,1,4,2,4]
+
+function averageNumbers(findAverageNumber){
+    let sumFindAverageNumber = 0;
+    for(var number of findAverageNumber){
+        sumFindAverageNumber += number;
+    }
+    let averageNumber = sumFindAverageNumber / findAverageNumber.length
+    return averageNumber;
+}
+console.log(averageNumbers(findAverageNumber))
 
 // 11.	Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater 
 //than the average of the elements in the second array.
 
+let firstArray = [7,8,9];
+let secondArray = [5,2,3];
+
+function firstGreaterSecond (firstArray,secondArray){
+    let findFirstArrayAverage = 0;
+    for(var number of firstArray){
+        findFirstArrayAverage += number;
+    }
+    let firstArrayAverage = findFirstArrayAverage / firstArray.length;
+    let findSecondArrayAverage = 0;
+    for(var number of secondArray){
+        findSecondArrayAverage += number;
+    }
+    let secondArrayAverage = findSecondArrayAverage / secondArray.length;
+    if(firstArrayAverage > secondArrayAverage){
+        return true;
+    }
+}
+console.log(firstGreaterSecond(firstArray,secondArray));
 
 // 12.	Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside 
 //and if moneyInPocket is greater than 10.50.
 
+let isHotOutside = true;
+let moneyInPocket = 11;
+
+function willBuyDrink(isHotOutside,moneyInPocket){
+    if(isHotOutside === true && moneyInPocket >= 10.50){
+        return true;
+    }
+}
+console.log(willBuyDrink(isHotOutside,moneyInPocket));
 
 // 13.	Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
+
+function question(message) {
+    return function(name){
+                 return message + name + '?';
+        }
+}
+let askAge = question("How old are you ");
+console.log(askAge('Mark'));
+
+// asks someone how old they are in this case mark.
